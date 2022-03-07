@@ -6,6 +6,17 @@ class List extends React.Component {
         super(props);
     }
     state = {  }
+
+    cargarDatos(){
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then((datosrespuesta)=> {console.log(datosrespuesta)})
+        .catch(console.log)
+    }
+
+    componentDidMount(){
+        this.cargarDatos();
+    }
     render() { 
         return ( <table className="table">
         <thead>
